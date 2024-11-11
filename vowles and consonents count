@@ -1,0 +1,17 @@
+%{
+	int vc=0,cc=0;
+%}
+%%
+[aeiouAEIOU] {vc++;}
+[a-zA-z] {cc++;}
+%%
+int yywrap(void) {}
+int main()
+{
+	printf("\nEnter the Sentence:");
+	yylex();
+	printf("Vowel_Count=%d",vc);
+	printf("\nConsonant Count=%d",cc);
+	printf("\n");
+	return 0;
+}
