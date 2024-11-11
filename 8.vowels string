@@ -1,0 +1,13 @@
+%{
+%}
+
+%option noyywrap
+
+%%
+[aeiouAEIOU][a-zA-Z]* {printf("This string is accepted");}
+.+ {printf("This string is not starting with vowel");} 
+%%
+int main(){
+printf("Enter the input: ");
+yylex();
+}
