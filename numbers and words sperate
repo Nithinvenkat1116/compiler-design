@@ -1,0 +1,13 @@
+%{
+%}
+%%
+[a-zA-Z]+ {printf("Word: %s\n",yytext);}
+[0-9]+ {printf("Number: %s\n",yytext);}
+\n {printf("\n");}
+. {}
+%%
+int yywrap() {}
+int main(){
+printf("Enter the sentence: ");
+yylex();
+}
