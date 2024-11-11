@@ -1,0 +1,15 @@
+
+%{
+%}
+%%
+[A-Z]+ {printf("Upper Case Word!!\n");}
+.+ {printf("Lower Case Word!!\n");}
+%%
+int yywrap(void){}
+int main()
+{
+	printf("\nEnter the Word:");
+	yylex();
+	printf("\n");
+	return 0;
+}
