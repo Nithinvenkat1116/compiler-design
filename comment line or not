@@ -1,0 +1,15 @@
+
+%{
+%}
+%%
+"//"[a-zA-Z" "0-9]+ printf("The Given Line is a Comment\n");
+"*/"[a-zA-Z" "0-9]+"*/" printf("The Given Line is a Comment\n");
+.+ printf("The Given Line is a Statement!!");
+%%
+int yywrap(void) {}
+int main()
+{
+	printf("Enter the Input:");
+	yylex();
+	return 0;
+}
