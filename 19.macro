@@ -1,0 +1,17 @@
+%{
+int nmacro,nheader;
+%}
+%%
+^#define {nmacro++;}
+^#include {nheader++;}
+%%
+int yywrap()
+{
+return 1;
+}
+int main()
+{
+yylex();
+printf("NUmber of macros defined=%d\n",nmacro);
+printf("NUmber of header files included=%d\n",nheader);
+}
