@@ -1,0 +1,20 @@
+
+%{
+    #include <string.h>
+	char word[10];
+	int wc=0;
+%}
+%%
+[a-zA-Z0-9]+ {if(strcmp(yytext,word)==0){wc++;}}
+.|\n {}
+%%
+int yywrap(void) {}
+int main()
+{
+	printf("Enter the Word=");
+	scanf("%s",word);
+	yyin=fopen("sample1.txt","r");
+	yylex();
+	printf("Frequency=%d",wc);
+	return 0;
+}
